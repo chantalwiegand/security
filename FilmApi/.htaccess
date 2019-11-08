@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond ${REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^films/$ FilmController.php [QSA,L]
+RewriteRule ^films/([^/]*)$ FilmController.php?id=$1 [QSA,L]
